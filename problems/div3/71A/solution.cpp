@@ -1,5 +1,6 @@
 #include <algorithm>
 #include <iostream>
+#include <string>
 #include <utility>
 #include <vector>
 
@@ -21,7 +22,18 @@ int main() {
 
     int wl = word.size();
     if (wl <= 10) {
-      cout << word;
+      cout << word << '\n';
+      continue;
+    }
+
+    if (wl == 11) {
+      char newWord[3];
+      newWord[0] = word[0];
+      newWord[2] = word[wl - 1];
+      newWord[1] = 9 + '0';
+
+      string s(newWord, 3);
+      cout << s << '\n';
       continue;
     }
 
@@ -38,7 +50,7 @@ int main() {
     newWord[2] = ones + '0';
 
     string s(newWord, 4);
-    cout << s;
+    cout << s << '\n';
   }
 
   return 0;
